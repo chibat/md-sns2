@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts"
+    "start": "deno run --allow-env --allow-read --allow-write=.,/tmp --allow-net=deno.land,esm.sh,crux.land,unpkg.com,0.0.0.0:8000 --allow-run=$HOME/.deno/bin/deno,$HOME/.cache/esbuild/bin/esbuild-linux-64@0.14.39 --watch=static/,routes/ dev.ts"
   },
   "importMap": "./import_map.json"
 }

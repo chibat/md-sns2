@@ -2,10 +2,14 @@
 import { h } from "preact";
 import { tw } from "@twind";
 import Counter from "../islands/Counter.tsx";
+import { Head } from "$fresh/src/runtime/head.ts";
 
 export default function Home() {
   return (
     <div class={tw`p-4 mx-auto max-w-screen-md`}>
+      <Head>
+        <title>md-sns</title>
+      </Head>
       <img
         src="/logo.svg"
         height="100px"

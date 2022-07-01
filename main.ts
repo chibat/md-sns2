@@ -21,6 +21,7 @@ function render(ctx: RenderContext, render: InnerRenderFunction) {
   ctx.styles.splice(0, ctx.styles.length, ...(sheet).target);
   const newSnapshot = sheet.reset();
   ctx.state.set("twind", newSnapshot);
+  ctx.lang = "";
 }
 
 await start(manifest, { render });

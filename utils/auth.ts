@@ -105,7 +105,7 @@ export function getCode(url: string) {
   return new URL(url).searchParams.get("code");
 }
 
-export async function getGoogleUser(request: Request, headers: Headers): Promise<GoogleUser | null> {
+export async function getGoogleUser(request: Request): Promise<GoogleUser | null> {
   const cookies = getCookies(request.headers);
   const accessToken = cookies["access"];
   if (accessToken) {
@@ -129,7 +129,7 @@ export async function getGoogleUser(request: Request, headers: Headers): Promise
       refreshToken,
     );
     if (access_token) {
-      setCookie(headers, {
+      setCookie(request.headers, {
         name: "access",
         value: access_token,
         sameSite: "Strict",
